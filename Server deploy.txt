@@ -1,0 +1,19 @@
+mkdir .elasticbeanstalkcd .elasticbeanstalkconfig.yml
+branch-defaults:  master:    environment: ivysaur-production    group_suffix: nullglobal:  application_name: ivysaur  default_ec2_keyname: aws-eb  default_platform: Python 2.7  default_region: us-east-1  profile: ivysaur  sc: git
+
+result:
+- ivysaur    - .elasitbeanstalk        - config.yml
+
+
+
+mkdir ~/.aws
+touch ~/.aws/credentials
+[ivysaur]aws_access_key_id = AKIAJGR47IQAN7LMZC7Aaws_secret_access_key = tAl6WjcJJnb9rhqFUuiIR3bQlmsbJOCas3VEqbvM
+
+
+//////
+just go to the `ivysaur directory`
+eb deploy
+(pip install awsebcli==3.7.4
+sudo pip install awsebcli==3.7.4 --ignore-installed python-dateutil)
+

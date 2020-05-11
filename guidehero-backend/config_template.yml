@@ -1,0 +1,11 @@
+branch-defaults:
+  master:
+    environment: ivysaur-staging
+    group_suffix: null
+global:
+  application_name: ivysaur
+  default_ec2_keyname: null
+  default_platform: Python 2.7
+  default_region: us-east-1
+  profile: ivysaur
+  sc: git

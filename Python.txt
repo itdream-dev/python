@@ -1,0 +1,21 @@
+sudo easy_install pip
+// Run virtualenv
+sudo pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+
+cd /Volumes/WORK/Git/Guidehero/ivysaur
+
+source /Volumes/Work/Workshop/Projects/GuideHero/Source/venv/bin/activate
+cd /Volumes/Work/Workshop/Projects/GuideHero/Source/guidehero-backend
+export IVYSAUR_ENV=development
+
+python ivysaur.py --logging=DEBUG
+
+
+
+python manage.py db upgrade
+
+
+python manage.py create_roles
+python ivysaur.py

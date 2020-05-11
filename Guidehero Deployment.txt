@@ -1,0 +1,54 @@
+1. Create a elasticbeanstalk folder
+$ mkdir .elasticbeanstalk
+
+2. Go to .elasticbeanstalk folder
+$ cd .elasticbeanstalk
+
+3. Create config.yml
+$ touch config.yml
+
+4. Write the following to config.yml
+branch-defaults:  
+   master:    
+      environment: ivysaur-production    
+      group_suffix: null
+
+global:  
+   application_name: ivysaur  
+   default_ec2_keyname: aws-eb  
+   default_platform: Python 2.7     
+   default_region: us-east-1  
+   profile: ivysaur  
+   sc: git
+
+result:
+
+- ivysaur    
+   - .elasitbeanstalk        
+      - config.yml
+
+
+
+
+
+5. Create .aws folder
+$ mkdir ~/.aws
+
+6. Create credential file
+$ touch ~/.aws/credentials
+
+7. Write the following content into credentials file
+[ivysaur]
+aws_access_key_id = AKIAJGR47IQAN7LMZC7A
+aws_secret_access_key = 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
+
+
+8. Go to 'ivysaur directory', aka guidehero_backend
+9. Run the deploy script
+$ eb deploy
+
+* In case that "eb" command is not found
+$ pip install awsebcli==3.7.4
+If the above command throws the error,
+$ sudo pip install awsebcli==3.7.4 --ignore-installed python-dateutil
+

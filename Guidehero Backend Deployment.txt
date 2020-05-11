@@ -1,0 +1,88 @@
+
+1. Install pip on mac
+> sudo easy_install pip
+
+2. Install virtualenv
+
+> 
+sudo pip install virtualenv
+
+3. 
+Create a virtual environment for a project
+> virtualenv venv
+
+4. Activate the virtual env to begin using it
+
+> source venv/bin/activate
+
+5. Set the environment variable
+> export IVYSAUR_ENV=development
+
+6. Install packages
+> sudo pip install -r requirements.txt
+*** Note: might have to do (or have to do)
+> sudo PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin pip install psycopg2
+> brew install postgresql (before that, might need to install homebrew)
+
+Install setuptools on mac
+- Download ez_setup.py module from https://pypi.python.org/pypi/setuptools
+- Open a terminal
+- cd to the directory where you put the 'ez_setup.py'
+- type 'python ez_setup.py' and run it (or sudo ...)
+
+Install Homebrew
+- Open a terminal
+> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+"Command "python setup.py egg_info" failed with error code 1 in ...
+IN CASE OF "egg_info" error
+> pip install --upgrade setuptools
+* pip install --upgrade setuptools --user python (for System Integrity Protection in El Capitan)
+
+
+
+
+Uninstalling setuptools exception:
+> sudo -H pip install --upgrade setuptools
+Exception...
+> pip install --upgrade setuptools --user python
+
+> pip install ez_setup
+> pip install unroll
+
+ld: library not found for -lssl
+> xcode-select --install
+
+
+7. Install packages in the development mode
+> sudo pip install -r requirements_dev.txt
+
+8. Create a postgres server using pgAdmin 4. 
+Host name/address: localhost
+Port: 5432
+Maintenance database: postgres
+Username: postgres
+Password: blank
+Role: blank
+SSL mode: Allow
+
+9. Create a database
+Database name: ivysaur
+Owner: mac user (e.g. promisingchange)
+
+10. Migrate a database, when necessary
+> python manage.py db upgrade
+* in the source directory
+
+11. Initialize the Roles table
+> python manage.py create_roles
+* in the source directory
+
+12. Start the server
+> python ivysaur.py
+
+13. Start the server in the DEBUG mode
+> python ivysaur.py --logging=DEBUG
+
+
+

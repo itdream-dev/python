@@ -1,0 +1,18 @@
+.DS_Store
+*.pyc
+env
+*.log
+virtualenv
+nosetests.*
+VERSION
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.ebextensions
+node_modules/
+bower_components/
+error_report.txt
+version.txt
+.exrc/
